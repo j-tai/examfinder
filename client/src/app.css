@@ -1,0 +1,41 @@
+:root {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: normal;
+
+    color: rgba(0, 0, 0, 0.87);
+    background-color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+:root, input {
+    font-family: Lato, Helvetica, Arial, sans-serif;
+}
+
+a {
+    font-weight: bold;
+    color: #e03939;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: #fd6e6e;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.2em;
+}
+
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
