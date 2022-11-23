@@ -28,7 +28,16 @@ async fn main() {
     tracing_subscriber::fmt::init();
 
     let redis_url = get_env("REDIS_URL");
-    let dist_dir = get_env("CLIENT_DIST_DIR");
+    let dist_dir = {
+        #[cfg(feature = "packaged")]
+        {
+            "/usr/local/share/examfinder/client".to_string()
+        }
+        #[cfg(not(feature = "packaged"))]
+        {
+            get_env("CLIENT_DIST_DIR")
+        }
+    };
 
     let redis = db::connect(&redis_url).await;
     let assets_dir = format!("{dist_dir}/assets");
